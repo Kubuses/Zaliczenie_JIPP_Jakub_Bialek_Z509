@@ -97,5 +97,37 @@ namespace Zaliczenie_JIPP_Jakub_Bialek.Controllers
             var programmingBook = await _context.ProgrammingBooks.FirstOrDefaultAsync(x => x.ID == id);
             return View(programmingBook);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(ProgrammingBookModel programmingBook)
+        {
+            if (ModelState.IsValid) 
+            {
+                try
+                {
+                    var exists = await _context.ProgrammingBooks.FirstOrDefaultAsync(x => x.ID == programmingBook.ID);
+
+                    if (exists != null)
+                    {
+                        _context.ProgrammingBooks.Remove(exists);
+                        await _context.SaveChangesAsync();
+
+                        return RedirectToAction("Index");
+                    }
+
+                    ModelState.AddModelError(string.Empty, "Invalid book to delete");
+                    return View(programmingBook);
+                }
+                catch (Exception ex)
+                {
+
+                    ModelState.AddModelError(string.Empty, $"Something went wrong {ex.Message}");
+                    return View(programmingBook);
+                }
+            }
+
+            ModelState.AddModelError(string.Empty, "Something went wrong");
+            return View();
+        }
     }
 }
