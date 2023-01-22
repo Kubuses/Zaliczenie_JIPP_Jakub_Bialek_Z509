@@ -1,7 +1,13 @@
 ﻿
 @model List<Zaliczenie_JIPP_Jakub_Bialek.Models.ProgrammingBookModel>
 
+
 <div class="row">
+    <div class="col-md-12">
+        <a asp-action="Create" asp-controller="ProgrammingBooksController" class="btn btn-success">
+            Create
+        </a>
+    </div>
     <div class="col-md-12">
         <table class="table">
             <thread>
@@ -15,19 +21,21 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <td>@item.ID</td>
-                    <td>@item.Author</td>
-                    <td>@item.Title</td>
-                    <td>@item.PublishYear</td>
-                    <td>
-                    <a asp-action="Edit" asp-controller="ProgrammingBooksController" class="btn btn-warning" asp-route-id="@item.ID">
-                        Edit
-                    </a>
-                    <a asp-action="Delete" asp-controller="ProgrammingBooksController" class="btn btn-danger" asp-route-id="@item.ID">
-                        Danger
-                     </a>
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Author</td>
+                        <td>@item.Title</td>
+                        <td>@item.PublishYear</td>
+                        <td>
+                        <a asp-action="Edit" asp-controller="ProgrammingBooksController" class="btn btn-warning" asp-route-id="@item.ID">
+                            Edit
+                        </a>
+                        <a asp-action="Delete" asp-controller="ProgrammingBooksController" class="btn btn-danger" asp-route-id="@item.ID">
+                            Danger
+                         </a>
 
-                    </td>
+                        </td>
+                    </tr>
                 }
             </tbody>
    

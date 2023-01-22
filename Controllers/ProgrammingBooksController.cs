@@ -20,5 +20,17 @@ namespace Zaliczenie_JIPP_Jakub_Bialek.Controllers
             var programmingBooks = await _context.ProgrammingBooks.ToListAsync();
             return View(programmingBooks);
         }
+
+        [HttpGet]
+        public IActionResult Create() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(ProgrammingBookContext programmingBook) 
+        {
+            return View();
+        }
     }
 }
