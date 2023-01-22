@@ -13,6 +13,11 @@ namespace Zaliczenie_JIPP_Jakub_Bialek.Data
 
         }
 
+        public ProgrammingBookContext()
+        {
+
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
