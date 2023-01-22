@@ -56,7 +56,7 @@ namespace Zaliczenie_JIPP_Jakub_Bialek
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=ProgrammingBooks}/{action=Index}/{id?}");
             });
         }
     }

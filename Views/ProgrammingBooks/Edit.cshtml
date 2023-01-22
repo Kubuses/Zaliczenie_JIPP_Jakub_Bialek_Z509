@@ -1,7 +1,8 @@
 ﻿@model Zaliczenie_JIPP_Jakub_Bialek.Models.ProgrammingBookModel
 
-<form asp-action="Create" asp-controller="ProgrammingBooks" method="post">
-    <div class="row">
+<form asp-action="Edit" asp-controller="ProgrammingBooks" method="post">
+    <input type="hidden" asp-for="ID" />
+        <div class="row">
         <div class="col-md-12">
             <div class="form-group">
                 <label>Author</label>
@@ -23,7 +24,7 @@
             </div>
             <div class="card-footer">
                 <center>
-                    <button type="submit" class="btn btn-success">Add Book</button>
+                    <button type="submit" class="btn btn-warning">Edit</button>
                     <a asp-action="Index" asp-controller="ProgrammingBooks" class="btn">Return</a>
                 </center>
             </div>
